@@ -1,0 +1,54 @@
+hoa_code,full_name,role,email,term_start,term_end
+SR-01,Alex Tanaka,President,alex.tanaka@example.com,2023-07-01,2025-07-01
+SR-01,Reese Patel,Vice President,reese.patel@example.com,2024-01-01,
+SR-01,Alex Nguyen,Treasurer,,2023-07-01,2026-01-01
+SR-02,Reese Webb,President,reese.webb@example.com,2024-06-15,2025-07-01
+SR-02,Jamie Flores,Vice President,jamie.flores@example.com,2024-01-01,2025-07-01
+SR-02,Reese Brooks,Treasurer,reese.brooks@example.com,2023-07-01,2025-07-01
+SR-02,Skyler Reyes,Secretary,,2024-06-15,2026-01-01
+SR-02,Taylor Silva,Member at Large,taylor.silva@example.com,01/01/2025,2026-01-01
+SR-03,Drew Patel,President,drew.patel@example.com,2024-06-15,2026-01-01
+SR-03,Drew Johnson,Vice President,drew.johnson@example.com,01/01/2025,2025-07-01
+SR-03,Reese Patel,Treasurer,,2023-07-01,
+SR-03,Jordan Silva,Secretary,jordan.silva@example.com,2024-01-01,
+SR-03,Riley Cole,Member at Large,riley.cole@example.com,01/01/2025,2025-07-01
+SR-04,Taylor Kim,President,taylor.kim@example.com,2024-01-01,2025-07-01
+SR-04,Drew Tanaka,Vice President,drew.tanaka@example.com,2024-06-15,
+SR-04,Riley Hughes,Treasurer,riley.hughes@example.com,2023-07-01,
+SR-04,Devon Okafor,Secretary,devon.okafor@example.com,2023-07-01,2026-01-01
+SR-04,Skyler Reyes,Member at Large,skyler.reyes@example.com,2024-01-01,2025-07-01
+SR-05,Morgan Webb,President,morgan.webb@example.com,2024-06-15,2025-07-01
+SR-05,Riley Garcia,Vice President,riley.garcia@example.com,01/01/2025,
+SR-05,Harper Flores,Treasurer,harper.flores@example.com,2023-07-01,2025-07-01
+SR-05,Drew Cole,Secretary,,2024-01-01,2026-01-01
+SR-05,Casey Webb,Member at Large,casey.webb@example.com,2024-06-15,2026-01-01
+SR-06,Sam Flores,President,sam.flores@example.com,01/01/2025,2026-01-01
+SR-06,Avery Tanaka,Vice President,,01/01/2025,
+SR-06,Jordan Johnson,Treasurer,jordan.johnson@example.com,2024-06-15,2026-01-01
+SR-06,Reese Hughes,Secretary,reese.hughes@example.com,2023-07-01,2026-01-01
+SR-06,Devon Webb,Member at Large,devon.webb@example.com,2023-07-01,2025-07-01
+SR-07,Skyler Garcia,President,skyler.garcia@example.com,2024-01-01,
+SR-07,Jamie Nguyen,Vice President,,01/01/2025,
+SR-07,Morgan Nguyen,Treasurer,morgan.nguyen@example.com,2024-01-01,2026-01-01
+SR-07,Reese Cole,Secretary,reese.cole@example.com,2023-07-01,2025-07-01
+SR-07,Avery Cole,Member at Large,avery.cole@example.com,2023-07-01,
+SR-08,Morgan Hughes,President,morgan.hughes@example.com,2023-07-01,
+SR-08,Sam Webb,Vice President,sam.webb@example.com,2024-06-15,
+SR-08,Jordan Kim,Treasurer,jordan.kim@example.com,01/01/2025,2026-01-01
+SR-08,Quinn Ramos,Secretary,quinn.ramos@example.com,2023-07-01,2026-01-01
+SR-08,Jordan Tanaka,Member at Large,jordan.tanaka@example.com,2023-07-01,2026-01-01
+SR-09,Devon Reyes,President,,2023-07-01,
+SR-09,Avery Cole,Vice President,avery.cole@example.com,2023-07-01,
+SR-09,Morgan Okafor,Treasurer,morgan.okafor@example.com,2024-06-15,2025-07-01
+SR-10,Jordan Webb,President,jordan.webb@example.com,2024-06-15,
+SR-10,Jamie Silva,Vice President,jamie.silva@example.com,2024-01-01,2026-01-01
+SR-10,Sam Tanaka,Treasurer,sam.tanaka@example.com,2024-01-01,2025-07-01
+SR-11,Morgan Ramos,President,morgan.ramos@example.com,2024-06-15,2025-07-01
+SR-11,Riley Cole,Vice President,riley.cole@example.com,2024-01-01,
+SR-11,Skyler Silva,Treasurer,skyler.silva@example.com,2024-01-01,2026-01-01
+SR-11,Avery Ramos,Secretary,avery.ramos@example.com,2024-01-01,2025-07-01
+SR-11,Casey Brooks,Member at Large,casey.brooks@example.com,2023-07-01,
+SR-12,Casey Brooks,President,,2024-06-15,
+SR-12,Harper Okafor,Vice President,harper.okafor@example.com,01/01/2025,
+SR-12,Reese Tanaka,Treasurer,reese.tanaka@example.com,2024-06-15,2025-07-01
+SR-01,Alex Tanaka,President,alex.tanaka@example.com,2023-07-01,2025-07-01

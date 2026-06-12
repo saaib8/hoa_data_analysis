@@ -1,0 +1,15 @@
+vendor_name,trade,phone,email,serves_hoa_codes,coi_on_file,service_area
+Bright Path Landscaping,Landscaping,(555) 201-3344,contact@brightpathscapes.example,SR-01; SR-04; SR-10,Yes,"Bay Harbor, Riverton"
+Bright Path Landscaping LLC,Landscaping,555-201-3344,contact@brightpathscapes.example,SR-07,Y,Bay Harbor
+Coastline Plumbing,Plumbing,555.880.1290,dispatch@coastlineplumb.example,SR-04; SR-07,Yes,Bay Harbor
+Coastline Plumbing,Plumbing,5558801290,dispatch@coastlineplumb.example,SR-10,yes,Bay Harbor
+Evergreen Tree Care,Tree Service,(555) 442-9981,hello@evergreentree.example,,No,Greenvale
+Summit Roofing Co.,Roofing,555-777-0042,jobs@summitroof.example,,no,
+AquaPro Pool Service,Pool Maintenance,(555) 332-1188,service@aquapro.example,SR-10; SR-12,Yes,"Lakeside, Bay Harbor"
+Reliable Electric,Electrical,555 909 4521,office@reliableelec.example,SR-01,Yes,Riverton
+Reliable Electrical Services,Electrical,(555) 909-4521,office@reliableelec.example,,,Riverton
+GreenLeaf Pest Control,Pest Control,555-610-7733,book@greenleafpest.example,,Yes,"Greenvale, Lakeside"
+Titan Paving,Asphalt/Paving,(555) 245-6610,estimates@titanpaving.example,SR-04,No,Bay Harbor
+ClearView Window Cleaning,Window Cleaning,555-118-2200,info@clearviewwc.example,,Yes,
+Anchor Security Patrol,Security,(555) 700-9090,dispatch@anchorsecurity.example,SR-10; SR-04,Yes,Bay Harbor
+Bright Path Landscaping,Landscaping,(555) 201-3344,contact@brightpathscapes.example,SR-01,Yes,Riverton

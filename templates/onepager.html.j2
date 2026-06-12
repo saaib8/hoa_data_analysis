@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ a.association_name }} — Profile</title>
+<style>
+  :root { --ink:#1d2733; --muted:#6b7785; --line:#e4e8ee; --accent:#2f6f5e; --warn:#b4530a; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         color: var(--ink); margin: 0; background: #f6f7f9; }
+  .page { max-width: 820px; margin: 24px auto; background: #fff; padding: 40px 44px;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 14px; margin-bottom: 22px; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 14px; }
+  .code { float: right; font-size: 13px; color: var(--muted); font-weight: 600;
+          border: 1px solid var(--line); border-radius: 4px; padding: 3px 9px; }
+  section { margin: 22px 0; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent);
+       margin: 0 0 12px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 28px; }
+  .field { font-size: 14px; }
+  .label { color: var(--muted); font-size: 12px; }
+  .value { font-weight: 600; }
+  .missing { color: var(--muted); font-weight: 400; font-style: italic; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; color: var(--muted); font-weight: 600; font-size: 12px;
+       border-bottom: 1px solid var(--line); padding: 6px 8px; }
+  td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  .vendors { font-size: 14px; }
+  .vrow { display: flex; gap: 12px; padding: 5px 0; border-bottom: 1px solid var(--line); }
+  .vtrade { color: var(--accent); font-weight: 600; flex: 0 0 160px; }
+  .vnames { color: var(--ink); }
+  .watch { background: #fbf6ef; border: 1px solid #f0e2cf; border-radius: 6px; padding: 14px 16px; }
+  .watch ul { margin: 0; padding-left: 18px; }
+  .watch li { margin: 5px 0; font-size: 14px; }
+  .src { font-size: 11px; color: var(--muted); }
+  .tag { font-size: 10px; border-radius: 8px; padding: 0 6px; margin-left: 6px; }
+  .tag-act { color: var(--accent); border: 1px solid #cfe3dc; }
+  .tag-exp { color: var(--warn); border: 1px solid #f0d2b8; }
+  footer { margin-top: 26px; border-top: 1px solid var(--line); padding-top: 10px;
+           font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <span class="code">{{ a.hoa_code }}</span>
+    <h1>{{ a.association_name }}</h1>
+    <div class="sub">{{ a.city or "City unknown" }}{% if a.state %}, {{ a.state }}{% endif %}
+      &middot; {{ a.unit_count ~ " units" if a.unit_count is not none else "unit count not on file" }}</div>
+  </header>
+
+  <section>
+    <h2>Financial Snapshot</h2>
+    <div class="grid">
+      <div class="field"><div class="label">Monthly dues</div>
+        <div class="value">{{ money(a.monthly_dues) }}</div></div>
+      <div class="field"><div class="label">Fiscal year end</div>
+        <div class="value">{{ month_name(a.fiscal_year_end_month) }}</div></div>
+      <div class="field"><div class="label">Reserve balance</div>
+        <div class="value">{{ money(a.reserve_balance) }}</div></div>
+      <div class="field"><div class="label">Reserve per unit</div>
+        <div class="value">{{ money(s.reserve_per_unit) }}</div></div>
+      <div class="field"><div class="label">Reserve study</div>
+        <div class="value">{{ reserve_study_status }}</div></div>
+      <div class="field"><div class="label">Board contact</div>
+        <div class="value">{{ a.board_email or missing("none on file") }}</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Governance &mdash; Board Roster</h2>
+    {% if board %}
+    <table>
+      <tr><th>Name</th><th>Role</th><th>Email</th><th>Term</th></tr>
+      {% for m in board %}
+      <tr>
+        <td>{{ m.full_name }}</td>
+        <td>{{ m.role }}</td>
+        <td>{{ m.email or missing("—") }}</td>
+        <td class="src">{{ term(m.term_start, m.term_end) }}{% if m.expired %}<span
+          class="tag tag-exp">expired</span>{% else %}<span class="tag tag-act">active</span>{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% if s.missing_roles %}
+    <p class="src">Vacant seats: {{ s.missing_roles | join(", ") }}</p>
+    {% endif %}
+    {% else %}
+    <p class="missing">No board members on file.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>Vendors {% if s.vendor_count %}&mdash; {{ s.vendor_count }} active{% endif %}</h2>
+    {% if vendors_by_trade %}
+    <div class="vendors">
+      {% for trade, names in vendors_by_trade.items() %}
+      <div class="vrow"><span class="vtrade">{{ trade }}</span><span class="vnames">{{ names | join(", ") }}</span></div>
+      {% endfor %}
+    </div>
+    {% if s.vendors_without_coi %}
+    <p class="src">No certificate of insurance on file: {{ s.vendors_without_coi | join(", ") }}</p>
+    {% endif %}
+    {% else %}
+    <p class="missing">No vendors linked to this association.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>Summary &amp; Areas to Watch</h2>
+    <div class="watch">
+      {{ narrative_html }}
+      <div class="src" style="margin-top:10px">Generated by {{ narrative_source }}.</div>
+    </div>
+  </section>
+
+  <footer>
+    Generated {{ generated_at }} from the HOA Simplified DataHub (Supabase). Live query &mdash;
+    re-running reflects the current database state.
+  </footer>
+</div>
+</body>
+</html>
